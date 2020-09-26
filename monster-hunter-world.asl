@@ -2,6 +2,7 @@ state("MonsterHunterWorld", "416251")
 {
     float sessionTime: "MonsterHunterWorld.exe",0x4FB3FA0,0x90,0x46A0,0x14;
     int questStatus : "MonsterHunterWorld.exe",0x4FB5F70,0x54;
+    int questID : "MonsterHunterWorld.exe",0x4FB5F70,0x4C;
 }
 
 /*
@@ -40,7 +41,7 @@ update
 
 start
 {
-    if (current.questStatus == 2 && current.sessionTime > 0)
+    if (current.questID != -1 && current.questStatus == 2 && current.sessionTime > 0)
     {
         vars.DebugOutput("start timer");
         return true;
