@@ -59,7 +59,7 @@ split
 
 reset
 {
-    if (old.questStatus == 2 && (current.questStatus == 6 || current.questStatus == 7))
+    if (old.questStatus == 2 && (current.questStatus == 5 || current.questStatus == 6 || current.questStatus == 7))
     {
         vars.DebugOutput("Reset or return");
         return true;
