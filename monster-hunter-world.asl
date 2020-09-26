@@ -41,7 +41,7 @@ update
 
 start
 {
-    if (current.questID != -1 && current.questStatus == 2 && current.sessionTime > 0)
+    if (current.questID != -1 && current.questStatus == 2)
     {
         vars.DebugOutput("start timer");
         return true;
