@@ -1,8 +1,21 @@
+state("MonsterHunterWorld", "419914")
+{
+    // player_data
+    // "MonsterHunterWorld.exe",0x5064090
+    float sessionTime: "MonsterHunterWorld.exe",0x5064090,0x90,0x46A0,0x14;
+
+    // session_quest
+    // "MonsterHunterWorld.exe",0x5066060
+    int questID : "MonsterHunterWorld.exe",0x5066060,0x4C;
+    int questStatus : "MonsterHunterWorld.exe",0x5066060,0x54;
+}
+
 state("MonsterHunterWorld", "416251")
 {
     float sessionTime: "MonsterHunterWorld.exe",0x4FB3FA0,0x90,0x46A0,0x14;
-    int questStatus : "MonsterHunterWorld.exe",0x4FB5F70,0x54;
+
     int questID : "MonsterHunterWorld.exe",0x4FB5F70,0x4C;
+    int questStatus : "MonsterHunterWorld.exe",0x4FB5F70,0x54;
 }
 
 /*
@@ -19,9 +32,21 @@ startup
     vars.DebugOutput("First load startup action with MHW.asl");
 }
 
+
+/*
+ *
+ */
 init
 {
     refreshRate = 60;
+
+    string title = game.MainWindowTitle;
+    vars.DebugOutput(title);
+
+    string mhwVersion = title.Split('(', ')')[1];
+    vars.DebugOutput(mhwVersion);
+
+    version = mhwVersion;
 }
 
 exit
@@ -41,9 +66,11 @@ update
 
 start
 {
-    if (current.questID != -1 && current.questStatus == 2)
+    if (current.questID != -1 && current.questStatus == 2 && (current.sessionTime > 0.01666666754f && current.sessionTime < 1.0f))
     {
-        vars.DebugOutput("start timer");
+        vars.DebugOutput("MHW version : " + version);
+        vars.DebugOutput("Quest ID : " + current.questID);
+        vars.DebugOutput("start timer at session time " + current.sessionTime);
         return true;
     }
 }
