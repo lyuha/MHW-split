@@ -36,7 +36,7 @@ state("MonsterHunterWorld", "421471") {
     float sessionTime: "MonsterHunterWorld.exe",0x0506F240,0x90,0x46A0,0x14;
     // session_quest
     // "MonsterHunterWorld.exe",0x506F240
-    int questID : "MonsterHunterWorld.exe",0x0506F240,0x4C,0x14000000;
+    int questID : "MonsterHunterWorld.exe",0x0506F240,0x4C;
     int questStatus : "MonsterHunterWorld.exe", 0x0506F240, 0x54;
 }
 
