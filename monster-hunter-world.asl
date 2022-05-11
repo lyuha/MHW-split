@@ -90,9 +90,9 @@ start
 {
     if (current.questID != -1 && current.questStatus == 2 && (current.sessionTime > 0.01666666754f && current.sessionTime < 1.0f))
     {
-        vars.DebugOutput("start timer at session time " + current.sessionTime);
         vars.DebugOutput("MHW version : " + version);
         vars.DebugOutput("Quest ID : " + current.questID);
+        vars.DebugOutput("start timer at session time " + current.sessionTime);
         return true;
     }
 }
