@@ -32,8 +32,8 @@ state("MonsterHunterWorld", "416251")
 state("MonsterHunterWorld", "421471") {
     
     // player_data
-    // "MonsterHunterWorld.exe",0x5064090
-    float sessionTime: "MonsterHunterWorld.exe",0x0506F240,0x90,0x46A0,0x14;
+    // "MonsterHunterWorld.exe",0x506D270 
+    float sessionTime: "MonsterHunterWorld.exe",0x0506D270,0x90,0x46A0,0x14;
     // session_quest
     // "MonsterHunterWorld.exe",0x506F240
     int questID : "MonsterHunterWorld.exe",0x0506F240,0x4C;
@@ -90,9 +90,9 @@ start
 {
     if (current.questID != -1 && current.questStatus == 2 && (current.sessionTime > 0.01666666754f && current.sessionTime < 1.0f))
     {
+        vars.DebugOutput("start timer at session time " + current.sessionTime);
         vars.DebugOutput("MHW version : " + version);
         vars.DebugOutput("Quest ID : " + current.questID);
-        vars.DebugOutput("start timer at session time " + current.sessionTime);
         return true;
     }
 }
