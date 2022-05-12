@@ -29,6 +29,16 @@ state("MonsterHunterWorld", "416251")
     int questID : "MonsterHunterWorld.exe",0x4FB5F70,0x4C;
     int questStatus : "MonsterHunterWorld.exe",0x4FB5F70,0x54;
 }
+state("MonsterHunterWorld", "421471") {
+    
+    // player_data
+    // "MonsterHunterWorld.exe",0x506D270 
+    float sessionTime: "MonsterHunterWorld.exe",0x0506D270,0x90,0x46A0,0x14;
+    // session_quest
+    // "MonsterHunterWorld.exe",0x506F240
+    int questID : "MonsterHunterWorld.exe",0x0506F240,0x4C;
+    int questStatus : "MonsterHunterWorld.exe", 0x0506F240, 0x54;
+}
 
 /*
  * Run when the script is first load.
