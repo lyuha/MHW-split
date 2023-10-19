@@ -1,3 +1,15 @@
+state("MonsterHunterWorld", "420540")
+{
+    // player_data
+    // "MonsterHunterWorld.exe",0x50640A0
+    float sessionTime: "MonsterHunterWorld.exe",0x50640A0,0x90,0x46A0,0x14;
+
+    // session_quest
+    // "MonsterHunterWorld.exe",0x5066070
+    int questID : "MonsterHunterWorld.exe",0x5066070,0x4C;
+    int questStatus : "MonsterHunterWorld.exe",0x5066070,0x54;
+}
+
 state("MonsterHunterWorld", "419914")
 {
     // player_data
