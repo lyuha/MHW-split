@@ -39,6 +39,17 @@ state("MonsterHunterWorld", "421471") {
     int questID : "MonsterHunterWorld.exe",0x0506F240,0x4C;
     int questStatus : "MonsterHunterWorld.exe", 0x0506F240, 0x54;
 }
+state("MonsterHunterWorld", "421631") {
+    
+    // player_data
+    // "MonsterHunterWorld.exe",0x500AB60
+    float sessionTime: "MonsterHunterWorld.exe",0x500AB60,0x90,0x46A0,0x14;
+    
+    // session_quest
+    // "MonsterHunterWorld.exe",0x500CAF0
+    int questID : "MonsterHunterWorld.exe", 0x500CAF0,0x4C;
+    int questStatus : "MonsterHunterWorld.exe", 0x500CAF0, 0x54;
+}
 
 /*
  * Run when the script is first load.
@@ -50,6 +61,7 @@ startup
         print("[MonsterHunterWorld] " + text);
     };
     vars.DebugOutput = DebugOutput;
+    
 
     vars.DebugOutput("First load startup action with MHW.asl");
 }
